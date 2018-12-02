@@ -16,7 +16,8 @@ The foundamental object of Hi-C, or any 3C(Chromosome Conformation Capture)-deri
 
 ![Aaron Swartz](https://github.com/BEIBEICAO/BENG183/raw/master/Chromatin_Structures.png)
 In the general chromatin structure, DNA wrapped around histone octamers to form nucleosomes. Nucleosomes then compacted into a chromatin fiber. Chromatin fiber can fold and interact with each other, forming the topologically associating domains (TADs) showing in the picture below.The three-dimensional folding of chromosomes compartmentalizes the genome and can bring distant functional elements, such as promoters and enhancers, into close spatial proximity. 
-![Aaron Swartz](https://github.com/BEIBEICAO/BENG183/raw/master/Chromatin2.jpg)
+
+<img src="https://github.com/BEIBEICAO/BENG183/raw/master/Chromatin2.jpg" width="70%" height="70%" /><br>
 Deciphering the relationship between chromosome organization and genome activity will aid in understanding genomic processes, like transcription and replication.
 
 
