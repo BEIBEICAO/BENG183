@@ -1,18 +1,24 @@
-# 2.3 -Techs (chromosome conformation capture)-coupled 
-1. [Introduction](#231)
-2. [Overivew of 3C methods](#232)<br>
-    2.1. [Specificity](#2321)<br>
-    2.2. [Through-put and resolution](#2322)
-3. [Hi-C](#233)
-4. [ChIA-PET](#234)
-5. [Selected methods comparison](#235)
+# Hi-C Technology and Its Application
+1. [Introduction](#231)<br>
+    1.1 [Chromatin Structure](#2311)<br>
+2. [Hi-C protocol](#232)<br>
+3. [Data Analysis](#233)
+4. [Application](#234)
 
 
 
 
-## 2.3.1 Introduction<a name="231"></a>
+## 1. Introduction<a name="231"></a>
 
-The foundamental object of 3C(Chromosome Conformation Capture) techniques and 3C-derived methods is to understand the physical wiring diagram of the genome by identifying the physical interaction between chromosomes. 
+The foundamental object of Hi-C, or any 3C(Chromosome Conformation Capture)-derived methods, is to understand the physical wiring diagram of the genome by identifying the physical interaction between chromosomes. 
+
+#### 1) Chromatin Structure<a name="2311"></a>
+
+![Aaron Swartz](https://github.com/BEIBEICAO/BENG183/raw/master/Chromatin_Structures.png)
+In the general chromatin structure, DNA wrapped around histone octamers to form nucleosomes. Nucleosomes then compacted into a chromatin fiber. Chromatin fiber can fold and interact with each other, forming the topologically associating domains (TADs) showing in the picture below.The three-dimensional folding of chromosomes compartmentalizes the genome and can bring distant functional elements, such as promoters and enhancers, into close spatial proximity. 
+![Aaron Swartz](https://github.com/BEIBEICAO/BENG183/raw/master/Chromatin2.jpg)
+Deciphering the relationship between chromosome organization and genome activity will aid in understanding genomic processes, like transcription and replication.
+
 
 To capture the interaction (crosslink between strings), there are few steps in general:
 - Take a snapshot of the flowing cells - **Crosslink** with fixative agent (formaldehyde)
