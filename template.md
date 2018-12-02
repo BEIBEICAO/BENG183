@@ -1,18 +1,18 @@
 # Hi-C Technology and Its Application
-1. [Introduction](#231)<br>
-    1.1 [Chromatin Structure](#2311)<br>
-2. [Hi-C protocol](#232)<br>
+1. [Introduction](#1)<br>
+    1.1 [Chromatin Structure](#11)<br>
+2. [Hi-C protocol](#2)
 3. [Data Analysis](#233)
 4. [Application](#234)
 
 
 
 
-## 1. Introduction<a name="231"></a>
+## 1. Introduction<a name="1"></a>
 
 The foundamental object of Hi-C, or any 3C(Chromosome Conformation Capture)-derived methods, is to understand the physical wiring diagram of the genome by identifying the physical interaction between chromosomes. 
 
-#### 1) Chromatin Structure<a name="2311"></a>
+#### 1) Chromatin Structure<a name="11"></a>
 
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/Chromatin_Structures.png" /><br>
 
@@ -33,19 +33,7 @@ Hi-C couples proximity ligation and do massively parallel sequencing, therefore 
 
 
 
-
-
-To capture the interaction (crosslink between strings), there are few steps in general:
-- Take a snapshot of the flowing cells - **Crosslink** with fixative agent (formaldehyde)
-- Zoom in on crosslinked part and exclude untangled parts - **Digested** with a restriction enzyme
-- Analyze the components come from the same chromatin - **Reverse crosslink** and **sequence**
-- Finish the jigsaw puzzle and get the results - **Align** the reads and **summarize** the contacts
-
-
-
-
-
-## 2.3.2 Overivew of 3C methods<a name="232"></a>
+## Hi-C protocol<a name="2"></a>
 
 ![](/assets/1-s2.0-S1360138518300827-gr1b2_lrg.jpg)
 [Figure1](https://doi.org/10.1016/j.tplants.2018.03.014). Schematic Representation of Chromosome Conformation Capture (3C) and 3C-Derived Methods. These methods help to elucidate nuclear organization by detecting physical interactions between genetic elements located throughout the genome. Abbreviations: IP, immunoprecipitation; RE, restriction enzyme. **Figure by Sotelo-Silveira, Mariana, et al. Trends in Plant Science (2018).**
