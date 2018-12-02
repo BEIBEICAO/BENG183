@@ -15,12 +15,15 @@ The foundamental object of Hi-C, or any 3C(Chromosome Conformation Capture)-deri
 #### 1) Chromatin Structure<a name="2311"></a>
 
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/Chromatin_Structures.png" /><br>
+
 In the general chromatin structure, DNA wrapped around histone octamers to form nucleosomes. Nucleosomes then compacted into a chromatin fiber. Chromatin fiber can fold and interact with each other, forming the topologically associating domains (TADs) showing in the picture below. The three-dimensional folding of chromosomes compartmentalizes the genome and can bring distant functional elements, such as promoters and enhancers, into close spatial proximity. 
 
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/Chromatin2.jpg" width="70%" height="70%" /><br>
+
 In other words, deciphering the relationship between chromosome organization and genome activity will aid in understanding genomic processes, like transcription and replication.
 
 In order to study these interactions, the scientists have developed a series of chromatin conformation capture (3C) techniques since 2002. **Hi-C is An extension of 3C that is capable of identifying long range chromatin interactions in an unbiased, genome-wide fashion.** <br>
+
 Hi-C couples proximity ligation and do massively parallel sequencing, therefore it has the following advangtages:
 - All v.s. all
 - Doesn’t require any prior knowledge
