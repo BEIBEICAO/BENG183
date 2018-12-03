@@ -1,7 +1,9 @@
 # Hi-C Technology and Its Application
 1. [Introduction](#1)<br>
     1.1 [Chromatin Structure](#11)<br>
-2. [Hi-C protocol](#2)
+2. [Hi-C protocol](#2)<br>
+    2.1 [Hi-C critical steps](#21)<br>
+    2.2 [Other 3C derivatives](#22)
 3. [Data Analysis](#233)
 4. [Application](#234)
 
@@ -36,11 +38,12 @@ Hi-C couples proximity ligation and do massively parallel sequencing, therefore 
 
 
 
-## 2. Hi-C protocol<a name="2"></a> [8] 
+## 2. Hi-C protocol<a name="2"></a> [8]
 
+#### 1) Hi-C critical steps<a name="21"></a>
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/protocol.png">
 
-- **Fixation: keep DNA conformed**
+- **Fixation: keep DNA conformed** 
 > Cells are fixed with formaldehyde, causing interacting loci to be bound to one another by means of covalent DNA-protein cross-links. 
 - **Digestion: enzyme frequency and penetratin**
 > The genome is then cut into fragments with a restriction endonuclease while the interacting loci remain linked. The size of restriction fragments determines the resolution of interaction mapping. 
@@ -52,20 +55,12 @@ Hi-C couples proximity ligation and do massively parallel sequencing, therefore 
 > Remove Biotin from un-ligated ends to produce DNA fragments that will enable paired-end sequencing. This step results in a genome-wide library of ligation products, corresponding to pairs of fragments that were originally in close proximity to each other in the nucleus. 
 Each ligation product is marked with biotin at the site of the junction. 
 - **Fragment size and pull-down: small fragments sequence better**
-> The library is sheared, and the junctions are pulled-down with streptavidin beads,allowing for ligation product enrichment prior to adapter ligation. 
+> The library is sheared, and the junctions are pulled-down with streptavidin beads, allowing for ligation product enrichment prior to adapter ligation. 
 - **Adapter ligation: paired-end and indexing**
 > The purified junctions with adapter ligated can subsequently be analyzed using a high-throughput sequencer, resulting in a catalog of interacting fragments.
 
-##### Hi-C derived techniques 
-- Hi-C original: [Lieberman-Aiden et al., Science 2010](doi: 10.1126/science.1181369)
-- Hi-C 1.0: [Belton-JM et al., Methods 2012](doi: 10.1016/j.ymeth.2012.05.001)
-- In situ Hi-C: [Rao et al., Cell 2014](doi: 10.1016/j.cell.2014.11.021)
-- Single cell Hi-C: [Nagano et al., Genome Biology 2015](https://doi.org/10.1186/s13059-015-0753-7)
-- DNase Hi-C [Ma, Wenxiu, Methods et al](https://www.ncbi.nlm.nih.gov/pubmed/25437436)
-- Hi-C 2.0: [Belaghzal et al., Methods 2017](https://www.ncbi.nlm.nih.gov/pubmed/28435001)
-- DLO-Hi-C: [Lin et al., Nature Genetics 2018](https://doi.org/10.1038/s41588-018-0111-2)
-- Hi-C improving: [Golloshi et al., Methods 2018](https://www.biorxiv.org/content/biorxiv/early/2018/02/13/264515.full.pdf)
-- Arima 1-day Hi-C: [Ghurye et al., BioRxiv 2018](https://www.biorxiv.org/content/early/2018/02/07/261149)
+#### 1) Other 3C derivatives<a name="22"></a>
+<img src="https://github.com/BEIBEICAO/BENG183/raw/master/Chromosome_conformation_techniques.jpg">
 
 ## 2.3.4 ChIA-PET<a name="234"></a> 
 ChIA-PET is another method that combines ChIP and pair-end sequencing to analysis the chromtin interaction. It allows for targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. on the one hand, it has the benefit of achieving a higher resolution compared to Hi-C, as only ligation products involving the immunoprecipitated molecule are sequenced, on the other hand, ChIA-PET has systematic biases due to ChIP process:
