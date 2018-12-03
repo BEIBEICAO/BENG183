@@ -36,17 +36,10 @@ Hi-C couples proximity ligation and do massively parallel sequencing, therefore 
 
 
 
-## 2. Hi-C protocol<a name="2"></a>
+## 2. Hi-C protocol<a name="2"></a> [8] 
 
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/protocol.png">
 
-
-
-
-
-
-https://en.wikipedia.org/wiki/File:Chromosome_conformation_techniques.jpg
-##### Hi-C critical steps [8] 
 - **Fixation: keep DNA conformed**
 > Cells are fixed with formaldehyde, causing interacting loci to be bound to one another by means of covalent DNA-protein cross-links. 
 - **Digestion: enzyme frequency and penetratin**
