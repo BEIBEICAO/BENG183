@@ -25,9 +25,12 @@ The three-dimensional folding of chromosomes compartmentalizes the genome and ca
 In order to study these interactions, the scientists have developed a series of chromatin conformation capture (3C) techniques since 2002. **Hi-C is An extension of 3C that is capable of identifying long range chromatin interactions in an unbiased, genome-wide fashion.** <br>
 
 Hi-C couples proximity ligation and do massively parallel sequencing, therefore it has the following advangtages:
-- All v.s. all
-- Doesn’t require any prior knowledge
-- Study genomic architecture at multiple scales
+- **All v.s. all**
+    - In 3C derived techniques, ‘1’, ‘Many’ and ‘All’ indicate how many loci are interrogated in a given experiment. For example, ‘1 versus All’ indicates that the experiment probes the interaction profile between 1 locus and all other potential loci in the genome. ‘All versus All’ means that one can detect the interaction profiles of all loci, genome-wide, and their interactions with all other genomic loci [1]. By the time when 3C was first developed, we were only able to analysis ‘one versus one’ loci interactions.
+- **Doesn’t require any prior knowledge**
+- **High through-put**
+    - Hi-C techniques has the highest through-put (billion reads per sample) of 3C-derived technologies. Due to the decreasing cost of 2nd generation sequencing, Hi-c is widely used. 
+- **Study genomic architecture at multiple scales**
     - From initial results identified features such as chromosome territories, to the segregation of open and closed chromatin, and finally chromatin structure at the megabase scale.
 
 
@@ -35,35 +38,30 @@ Hi-C couples proximity ligation and do massively parallel sequencing, therefore 
 
 ## 2. Hi-C protocol<a name="2"></a>
 
-![](/assets/1-s2.0-S1360138518300827-gr1b2_lrg.jpg)
-[Figure1](https://doi.org/10.1016/j.tplants.2018.03.014). Schematic Representation of Chromosome Conformation Capture (3C) and 3C-Derived Methods. These methods help to elucidate nuclear organization by detecting physical interactions between genetic elements located throughout the genome. Abbreviations: IP, immunoprecipitation; RE, restriction enzyme. **Figure by Sotelo-Silveira, Mariana, et al. Trends in Plant Science (2018).**
-
-To better understand the difference between these methods, I'd like to distingush them between the following couple of aspects:
-
-#### 1) Specificity - What does _one, all, many_ mean<a name="2321"></a>
-‘1’, ‘Many’ and ‘All’ indicate how many loci are interrogated in a given experiment. For example, ‘1 versus All’ indicates that the experiment probes the interaction profile between 1 locus and all other potential loci in the genome. ‘All versus All’ means that one can detect the interaction profiles of all loci, genome-wide, and their interactions with all other genomic loci [1].
-
-These kind of specificity is determined by the primer when people use **specific primers** before PCR. 
-
-#### 2) Through-put and resolution<a name="2322"></a>
-Hi-C techniques has the highest through-put (billion reads per sample) but suffering of a relative low resolution of 0.1-1Mb. However, the other methods usually have a higher resolution  around 1kb. For more details one can refer to table2 in [2].
-
-## 2.3.3 Hi-C<a name="233"></a>
-Hi-C is the highest through-put version of 3C-derived technologies. Due to the decreasing cost of 2nd generation sequencing, hi-c is widely used.
-
-The principle of Hi-C can be illustrated as:
-![](/assets/hic.gif)
+<img src="https://github.com/BEIBEICAO/BENG183/raw/master/protocol.png">
 
 
+
+
+
+
+https://en.wikipedia.org/wiki/File:Chromosome_conformation_techniques.jpg
 ##### Hi-C critical steps [8] 
-- Fixation: keep DNA conformed
-- Digestion: enzyme frequency and penetratin
-- Fill-in: biotin for junction enrichment
-- Ligation: freeze interactions in sequence
-- Biotin removal: junctions only
-- Fragment size: small fragments sequence better
-- Adapter ligation: paired-end and indexing
-- PCR: create enough material for flow cell
+- **Fixation: keep DNA conformed**
+> Cells are fixed with formaldehyde, causing interacting loci to be bound to one another by means of covalent DNA-protein cross-links. 
+- **Digestion: enzyme frequency and penetratin**
+> The genome is then cut into fragments with a restriction endonuclease while the interacting loci remain linked. The size of restriction fragments determines the resolution of interaction mapping. 
+- **Fill-in: biotin for junction enrichment**
+> A biotinylated residue is incorporated as the 5' overhangs are filled in. 
+- **Ligation: freeze interactions in sequence**
+> Blunt-end ligation is performed under dilute conditions that favor ligation events between cross-linked DNA fragments.
+- **Biotin removal: junctions only**
+> Remove Biotin from un-ligated ends to produce DNA fragments that will enable paired-end sequencing. This step results in a genome-wide library of ligation products, corresponding to pairs of fragments that were originally in close proximity to each other in the nucleus. 
+Each ligation product is marked with biotin at the site of the junction. 
+- **Fragment size and pull-down: small fragments sequence better**
+> The library is sheared, and the junctions are pulled-down with streptavidin beads,allowing for ligation product enrichment prior to adapter ligation. 
+- **Adapter ligation: paired-end and indexing**
+> The purified junctions with adapter ligated can subsequently be analyzed using a high-throughput sequencer, resulting in a catalog of interacting fragments.
 
 ##### Hi-C derived techniques 
 - Hi-C original: [Lieberman-Aiden et al., Science 2010](doi: 10.1126/science.1181369)
