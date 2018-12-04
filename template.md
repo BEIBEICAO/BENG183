@@ -139,7 +139,10 @@ More instructions: https://doc.genomegitar.org/preprocessing_data.html
     </tr>
     <tr>
         <td>8.<br>Visualizing the data</td>
-        <td>This part is to plot the heatmap and histogram for the normalized contact data.</td>
+        <td>This part is to plot the heatmap and histogram for the normalized contact data. After learning the correction parameters two matrices are computed per each chromosome at a specific bin size: Observed contact matrix O[i,j] where each entry contains the
+observed read count between the regions identified by the bins i and j; Correction matrix E[i,j] where each entry contains the sum of
+corrections for the read pairs between bins i and j. Then, the normalized contact matrix N[i,j] contains the corrected
+contact counts in each entry and it is calculated as: N[i,j] = O[i,j]/E[i,j]. </td>
     </tr>
  </tbody>
 </table>
@@ -151,7 +154,7 @@ More instructions: https://doc.genomegitar.org/preprocessing_data.html
 **Result Sample Figure**<br>
 <img src = "https://github.com/BEIBEICAO/BENG183/raw/master/result%20plot.png" width="70%" height="70%">
 > A: Normalized contact matrix of chromosome 6 from 50 Mb to 54 Mb with a bin size of 40 kb and the respective histogram of the contact distribution.
-This part is to plot the heatmap and histogram for the normalized contact data.
+This part is to plot the heatmap and histogram for the normalized contact data.<br>
 > B: Enrichment normalized contact matrix of chromosome 6 from 50 Mb to 54 Mb with a bin size of 40 kb and the respective histogram.
 This part is to plot the heatmap and histogram for the enrichment normalized data (“observed over expected”). The log2 of the data is plotted to quantify the positive enrichment (red) and the negative enrichment (blue). Loci (pixels) equal to zero before performing the log2 (deriving from zero observed contacts) are shown in gray. Loci (pixels) where enrichment expected contact was zero before performing the ratio (observed / expected) are shown in black.
 
