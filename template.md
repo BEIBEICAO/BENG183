@@ -4,7 +4,9 @@
 2. [Hi-C protocol](#2)<br>
     2.1 [Hi-C critical steps](#21)<br>
     2.2 [Other 3C derivatives](#22)
-3. [Data Analysis](#233)
+3. [Data Analysis](#3)<br>
+    3.1 [GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data](#21)<br>
+    3.2 [Analytical Pipeline](#21)
 4. [Application](#234)
 
 
@@ -59,17 +61,40 @@ Each ligation product is marked with biotin at the site of the junction.
 - **Adapter ligation: paired-end and indexing**
 > The purified junctions with adapter ligated can subsequently be analyzed using a high-throughput sequencer, resulting in a catalog of interacting fragments.
 
-#### 1) Other 3C derivatives<a name="22"></a>
+#### 2) 3C derivatives<a name="22"></a>
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/Chromosome_conformation_techniques.jpg">
 
-## 2.3.4 ChIA-PET<a name="234"></a> 
-ChIA-PET is another method that combines ChIP and pair-end sequencing to analysis the chromtin interaction. It allows for targeted binding factors such as: estrogen receptor alpha, CTCF-mediated loops, RNA polymerase II, and a combination of key architectural factors. on the one hand, it has the benefit of achieving a higher resolution compared to Hi-C, as only ligation products involving the immunoprecipitated molecule are sequenced, on the other hand, ChIA-PET has systematic biases due to ChIP process:
-- Only one type of binding factor selected
-- Different antibodies
-- ChIP conditions
 
 
-## 2.3.5 Selected methods comparison<a name="235"></a> 
+
+## 3. Data Analysis<a name="3"></a> 
+
+#### 1) GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data<a name="31"></a>
+
+GITAR (Genome Interaction Tools and Resources), is a software to perform a comprehensive Hi-C data analysis, including data preprocessing, normalization, visualization and topologically associated domains (TADs) analysis. GITAR is composed of two main modules: 
+- **HiCtool**, a Python library to process and visualize Hi-C data, including TADs analysis and 
+- **Processed data library**, a large collection of human and mouse datasets processed using HiCtool.
+
+GITAR enables to work with Hi-C data even without any programming or bioinformatic expertise and it is available online at www.genomegitar.org as an open source software.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table>
  <tbody>
     <tr>
