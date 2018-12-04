@@ -40,7 +40,7 @@ Hi-C couples proximity ligation and do massively parallel sequencing, therefore 
 
 
 
-## 2. Hi-C Protocol<a name="2"></a> [8]
+## 2. Hi-C Protocol<a name="2">[8]</a> 
 
 #### 1) Hi-C Critical Steps<a name="21"></a>
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/protocol.png">
@@ -92,13 +92,14 @@ More options on SRA Toolkit: https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?v
 > Truncate read ends at the ligation site (if present) and keep the longest piece without the junction sequence to improve the mapping outcome. The rationale is to remove bases that would otherwise prevent a read mapping to the specified reference genome, or mapping but with lower quality.<br> 
 More instructions: https://doc.genomegitar.org/preprocessing_data.html
 - **Independent alignment of pairs (Mapping to reference genome)**
-> Bowtie 2 is used for mapping the read pairs, and reads are mapped independently to **avoid any proximity constraint**. 
+> Bowtie 2 is used for mapping the read pairs, and reads are mapped independently to **avoid any proximity constraint**.<br>
 More about Bowtie 2: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 - **Filtering reads and selecting reads that are paired**
-> Remove unmapped or low quality mapped reads (MAPQ < 30). Create bam files that will serve as inputs for the normalization pipeline.
+> Remove unmapped or low quality mapped reads (MAPQ < 30). Create bam files that will serve as inputs for the normalization pipeline.<br>
 More instructions: https://doc.genomegitar.org/preprocessing_data.html
 - **Fragment end file generation for specific species and restriction enzyme**
-> Create the fragment-end (FEND) bed file, which is used to normalize the data **（technical & biological biases）** and contains restriction site coordinates and additional information related to fragment properties (GC content and mappability score). 
+> Create the fragment-end (FEND) bed file, which is used to normalize the data （technical & biological biases） and contains restriction site coordinates and additional information related to fragment properties (GC content and mappability score). <br>
+More instructions: https://doc.genomegitar.org/preprocessing_data.html
 
 
 
