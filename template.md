@@ -147,7 +147,7 @@ contact counts in each entry and it is calculated as: N[i,j] = O[i,j]/E[i,j]. </
 </table>
 
 > 1. The script HiCtool_hifive.py can be used to run all the HiFive steps (1-6), whose outputs are .hdf5 files. For more information about these functions, please see HiFive’s API documentation.<br>
-> 2. Detailed instruction: https://doc.genomegitar.org/data_analysis_and_visualization.html.
+> 2. Detailed instructions: https://doc.genomegitar.org/data_analysis_and_visualization.html.
 <br>
 
 **Result Sample Figure**<br>
