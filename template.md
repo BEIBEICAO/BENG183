@@ -88,7 +88,7 @@ GITAR enables to work with Hi-C data even without any programming or bioinformat
 
 - **Downloading the source data from GEO**
 > Source data (sra format) can be downloaded via GEO accession number using the command **fastq-dump**.<br>
-More options on [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=fastq-dump)
+More options on [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=fastq-dump).
 - **Paired-end sequencing** 
 > Split paired-reads SRA data into SRRXXXXXXX_1.fastq and SRRXXXXXXX_2.fastq, and SRRXXXXXXX.fastq (if present) contains reads with no mates. Paired-end sequencing allows users to sequence both ends of a fragment and generate high-quality, alignable sequence data. Paired-end sequencing facilitates detection of genomic rearrangements and repetitive sequence elements, as well as gene fusions and novel transcripts.
 - **Pre-truncation of the reads**
@@ -103,6 +103,7 @@ More options on [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?
 *[More instructions here](https://doc.genomegitar.org/preprocessing_data.html)
 
 ##### 2) Data Analysis and Visualization<a name="322"></a>
+
  <table>
   <tbody>
     <tr>
@@ -148,7 +149,7 @@ contact counts in each entry and it is calculated as: N[i,j] = O[i,j]/E[i,j]. </
 </table>
 
 > 1. The script HiCtool_hifive.py can be used to run all the HiFive steps (1-6), whose outputs are .hdf5 files. For more information about these functions, please see HiFive’s API documentation.<br>
-> 2. [More detailed instructions](https://doc.genomegitar.org/data_analysis_and_visualization.html).
+> 2. [More detailed instructions here](https://doc.genomegitar.org/data_analysis_and_visualization.html).
 <br>
 
 **Result Sample Figure**<br>
