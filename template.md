@@ -2,11 +2,11 @@
 1. [Introduction](#1)<br>
     1.1 [Chromatin Structure](#11)<br>
 2. [Hi-C protocol](#2)<br>
-    2.1 [Hi-C critical steps](#21)<br>
-    2.2 [Other 3C derivatives](#22)
+    2.1 [Hi-C Critical Steps](#21)<br>
+    2.2 [3C Derivatives](#22)
 3. [Data Analysis](#3)<br>
     3.1 [GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data](#21)<br>
-    3.2 [Analytical Pipeline](#21)
+    3.2 [Analytical Pipeline Summary](#21)
 4. [Application](#234)
 
 
@@ -40,9 +40,9 @@ Hi-C couples proximity ligation and do massively parallel sequencing, therefore 
 
 
 
-## 2. Hi-C protocol<a name="2"></a> [8]
+## 2. Hi-C Protocol<a name="2"></a> [8]
 
-#### 1) Hi-C critical steps<a name="21"></a>
+#### 1) Hi-C Critical Steps<a name="21"></a>
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/protocol.png">
 
 - **Fixation: keep DNA conformed** 
@@ -61,7 +61,7 @@ Each ligation product is marked with biotin at the site of the junction.
 - **Adapter ligation: paired-end and indexing**
 > The purified junctions with adapter ligated can subsequently be analyzed using a high-throughput sequencer, resulting in a catalog of interacting fragments.
 
-#### 2) 3C derivatives<a name="22"></a>
+#### 2) 3C Derivatives<a name="22"></a>
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/Chromosome_conformation_techniques.jpg">
 
 
@@ -76,6 +76,29 @@ GITAR (Genome Interaction Tools and Resources), is a software to perform a compr
 - **Processed data library**, a large collection of human and mouse datasets processed using HiCtool.
 
 GITAR enables to work with Hi-C data even without any programming or bioinformatic expertise and it is available online at www.genomegitar.org as an open source software.
+
+**HiCtool wrokflow:**
+
+<img src="https://github.com/BEIBEICAO/BENG183/raw/master/HiCtool.png"><br>
+
+#### 2) Analytical Pipeline Summary<a name="32"></a>
+
+- **Downloading the source data from GEO**
+> Source data (sra format) can be downloaded via GEO accession number using the command **fastq-dump**.<br>
+More options on SRA Toolkit: https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=fastq-dump
+- **Paired-end sequencing** 
+> Split paired-reads SRA data into SRRXXXXXXX_1.fastq and SRRXXXXXXX_2.fastq, and SRRXXXXXXX.fastq (if present) contains reads with no mates. Paired-end sequencing allows users to sequence both ends of a fragment and generate high-quality, alignable sequence data. Paired-end sequencing facilitates detection of genomic rearrangements and repetitive sequence elements, as well as gene fusions and novel transcripts.
+- **Pre-truncation of the reads**
+> Truncate read ends at the ligation site (if present) and keep the longest piece without the junction sequence to improve the mapping outcome. The rationale is to remove bases that would otherwise prevent a read mapping to the specified reference genome, or mapping but with lower quality.<br> 
+More instructions: https://doc.genomegitar.org/preprocessing_data.html
+- **Independent alignment of pairs (Mapping to reference genome)**
+> Bowtie 2 is used for mapping the read pairs, and reads are mapped independently to **avoid any proximity constraint**. 
+More about Bowtie 2: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
+- **Filtering reads and selecting reads that are paired**
+> Remove unmapped or low quality mapped reads (MAPQ < 30). Create bam files that will serve as inputs for the normalization pipeline.
+More instructions: https://doc.genomegitar.org/preprocessing_data.html
+- **Fragment end file generation for specific species and restriction enzyme**
+> Create the fragment-end (FEND) bed file, which is used to normalize the data **（technical & biological biases）** and contains restriction site coordinates and additional information related to fragment properties (GC content and mappability score). 
 
 
 
@@ -170,4 +193,4 @@ GITAR enables to work with Hi-C data even without any programming or bioinformat
 
 [8] https://github.com/hms-dbmi/hic-data-analysis-bootcamp/blob/master/HiC-Protocol.pptx.
 
-
+https://doc.genomegitar.org/preprocessing_data.html
