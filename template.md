@@ -6,9 +6,10 @@
     2.2 [3C Derivatives](#22)
 3. [Data Analysis](#3)<br>
     3.1 [GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data](#31)<br>
-    3.2 [Data Pre-processing](#32)<br>
-    3.3 [Data Analysis and Visualization](#33)<br>
-    3.4 [Topological Domains Analysis](#34)
+    3.2 [Analytical Pipline](#32)<br>
+            3.2.1 [Data Pre-processing](#321)<br>
+            3.2.2 [Data Analysis and Visualization](#322)<br>
+            3.2.3 [Topological Domains Analysis](#323)
     
 
 
@@ -78,11 +79,12 @@ GITAR (Genome Interaction Tools and Resources), is a software to perform a compr
 
 GITAR enables to work with Hi-C data even without any programming or bioinformatic expertise and it is available online at www.genomegitar.org as an open source software.
 
-**HiCtool wrokflow:**
+#### 2) Analytical Pipline<a name="32"></a>
 
+**HiCtool wrokflow:**<br>
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/HiCtool.png"><br>
 
-#### 2) Data Pre-processing<a name="32"></a>
+##### 1) Data Pre-processing<a name="321"></a>
 
 - **Downloading the source data from GEO**
 > Source data (sra format) can be downloaded via GEO accession number using the command **fastq-dump**.<br>
@@ -101,7 +103,7 @@ More about Bowtie 2: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 
 *More instructions: https://doc.genomegitar.org/preprocessing_data.html
 
-#### 3) Data Analysis and Visualization<a name="33"></a>
+##### 2) Data Analysis and Visualization<a name="322"></a>
  <table>
   <tbody>
     <tr>
@@ -157,7 +159,7 @@ This part is to plot the heatmap and histogram for the normalized contact data.<
 > B: Enrichment normalized contact matrix of chromosome 6 from 50 Mb to 54 Mb with a bin size of 40 kb and the respective histogram.
 This part is to plot the heatmap and histogram for the enrichment normalized data (“observed over expected”). The log2 of the data is plotted to quantify the positive enrichment (red) and the negative enrichment (blue). Loci (pixels) equal to zero before performing the log2 (deriving from zero observed contacts) are shown in gray. Loci (pixels) where enrichment expected contact was zero before performing the ratio (observed / expected) are shown in black.
 
-#### 4) Topological Domains Analysis<a name="34"></a>
+##### 3) Topological Domains Analysis<a name="323"></a>
 
 
 
