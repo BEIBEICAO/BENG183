@@ -102,45 +102,55 @@ More instructions: https://doc.genomegitar.org/preprocessing_data.html
 > Create the fragment-end (FEND) bed file, which is used to normalize the data （technical & biological biases） and contains restriction site coordinates and additional information related to fragment properties (GC content and mappability score). <br>
 More instructions: https://doc.genomegitar.org/preprocessing_data.html
 
-#### 2) Data Analysis and Visualization<a name="33"></a>
-
-- **Before normalization - HiFIVE**:
-    <table>
- <tbody>
+#### 3) Data Analysis and Visualization<a name="33"></a>
+ <table>
+  <tbody>
     <tr>
         <th>Step</td>
         <th>Function</td>
     </tr>
     <tr>
-        <td>1. Creating the Fend object</td>
+        <td>1.<br>Creating the Fend object</td>
         <td>Fend object Transform bed file to FEND object (which containing RE information like coordinates, GC content and mappability score).</td>
     </tr>
      <tr>
-        <td>2. Creating the HiCData object</td>
+        <td>2.<br>Creating the HiCData object</td>
         <td>It is where the information from mapped reads and fragments merged. Unwanted paired-reads (like total distance to their respective restriction sites exceeds threshold, PCR duplicates, incomplete restriction enzyme digestion and fragment) are removed.</td>
     </tr>
     <tr>
-        <td>3. Creating the HiC project object</td>
+        <td>3.<br>Creating the HiC project object</td>
         <td>The HiC project object (hdf5 format) links the HiCData object with information about which fends to include in the analysis</td>
     </tr>
     <tr>
-        <td>4. Creating the HiC project object</td>
+        <td>4.<br>Creating the HiC project object</td>
         <td>Filter out fragments that do not have any interaction before learning correction parameters.</td>
     </tr>
     <tr>
-        <td>5. Estimating the HiC distance function</td>
+        <td>5.<br>Estimating the HiC distance function</td>
         <td>Estimation of the distance-dependence relationship from the data prior to normalization.  Due to unevenly distributed restriction sites,  fragments surrounded by shorter ones will show higher nearby interactions than those with longer adjacent fragments</td>
     </tr>
     <tr>
-        <td>6. Learning the correction model</td>
+        <td>6.<br>Learning the correction model</td>
         <td>Take into account of fragments length, inter-fragment distance, GC content and mappability score biases to learn the correction model for Hi-C data. (Yaffe E. and Tanay A., 2011). In addition, biological biases are considered at this step (TSSs and CTCF bound sites).</td>
-    </tr><br>
-    
+    </tr>
+    <tr>
+        <td>7.<br>Normalizing the data</td>
+        <td>For the normalization, observed data and correction parameters to remove the biases to obtain the corrected read counts are required. Therefore, the observed contact matrix and the fend expected contact matrix are calculated. In addition, the enrichment expected contact matrix is calculated to compute the observed over expected enrichment values, considering also the distance between fends.</td>
+    </tr>
+    <tr>
+        <td>8.<br>Visualizing the data</td>
+        <td>This part is to plot the heatmap and histogram for the normalized contact data.</td>
+    </tr>
+ </tbody>
+</table>
+
+> 1. The script HiCtool_hifive.py can be used to run all the HiFive steps (1-6), whose outputs are .hdf5 files. For more information about these functions, please see HiFive’s API documentation.<br>2. Detailed instruction: https://doc.genomegitar.org/data_analysis_and_visualization.html.
 
 
-- **Normalizing the data**<br>
 
-- **Visualizing the data**<br>
+
+
+
 
 
 
