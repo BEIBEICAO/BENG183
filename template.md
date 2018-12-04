@@ -5,10 +5,11 @@
     2.1 [Hi-C Critical Steps](#21)<br>
     2.2 [3C Derivatives](#22)
 3. [Data Analysis](#3)<br>
-    3.1 [GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data](#21)<br>
-    3.2 [Analytical Pipeline Summary](#21)
-4. [Application](#234)
-
+    3.1 [GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data](#31)<br>
+    3.2 [Data Pre-processing](#32)<br>
+    3.3 [Data Analysis and Visualization](#33)<br>
+    3.4 [Topological Domains Analysis](#34)
+    
 
 
 
@@ -81,7 +82,7 @@ GITAR enables to work with Hi-C data even without any programming or bioinformat
 
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/HiCtool.png"><br>
 
-#### 2) Analytical Pipeline Summary<a name="32"></a>
+#### 2) Data Pre-processing<a name="32"></a>
 
 - **Downloading the source data from GEO**
 > Source data (sra format) can be downloaded via GEO accession number using the command **fastq-dump**.<br>
@@ -101,65 +102,52 @@ More instructions: https://doc.genomegitar.org/preprocessing_data.html
 > Create the fragment-end (FEND) bed file, which is used to normalize the data （technical & biological biases） and contains restriction site coordinates and additional information related to fragment properties (GC content and mappability score). <br>
 More instructions: https://doc.genomegitar.org/preprocessing_data.html
 
+#### 2) Data Analysis and Visualization<a name="33"></a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table>
+- **Before normalization - HiFIVE**:
+    <table>
  <tbody>
     <tr>
-        <th>Method</td>
-        <th>Targets</td>
-        <th>Resolution</td>
-        <th>Notes</td>
+        <th>Step</td>
+        <th>Function</td>
     </tr>
     <tr>
-        <td>3C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0535">[3]</a></td>
-        <td>one-vs-one</td>
-        <td>~1–10 kb<br></td>
-        <td><ul><li>Sequence of bait locus must be known</li><li>Easy data analysis</li><li>Low throughput</li></ul></td>
+        <td>1. Creating the Fend object</td>
+        <td>Fend object Transform bed file to FEND object (which containing RE information like coordinates, GC content and mappability score).</td>
+    </tr>
+     <tr>
+        <td>2. Creating the HiCData object</td>
+        <td>It is where the information from mapped reads and fragments merged. Unwanted paired-reads (like total distance to their respective restriction sites exceeds threshold, PCR duplicates, incomplete restriction enzyme digestion and fragment) are removed.</td>
     </tr>
     <tr>
-    <td>4C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0545">[4]</a></td>
-    <td>one-vs-all</td>
-    <td>~2 kb</td>
-    <td><ul><li>Sequence of bait locus must be known</li><li>Detects novel contacts</li><li>Long-range contacts</li></ul></td>
+        <td>3. Creating the HiC project object</td>
+        <td>The HiC project object (hdf5 format) links the HiCData object with information about which fends to include in the analysis</td>
     </tr>
     <tr>
-    <td>5C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0550">[5]</a></td>
-    <td>many-vs-many</td>
-    <td>~1 kb</td>
-    <td><ul><li>High dynamic range</li><li>Complete contact map of a locus</li><li>3C with ligation-mediated amplification (LMA) of a ‘carbon copy’ library of oligos designed across restriction fragment junctions of interest
-3C</li></ul></td>
+        <td>4. Creating the HiC project object</td>
+        <td>Filter out fragments that do not have any interaction before learning correction parameters.</td>
     </tr>
     <tr>
-    <td>Hi-C <a href="http://refhub.elsevier.com/S2001-0370(17)30093-4/rf0300">[6]</a></td>
-    <td>all-vs-all</td>
-    <td>0.1–1 Mb</td>
-    <td><ul><li>Genome-wide nucleosome core positioning</li><li>Relative low resolution</li><li>High cost</li></ul></td>
+        <td>5. Estimating the HiC distance function</td>
+        <td>Estimation of the distance-dependence relationship from the data prior to normalization.  Due to unevenly distributed restriction sites,  fragments surrounded by shorter ones will show higher nearby interactions than those with longer adjacent fragments</td>
     </tr>
     <tr>
-    <td>ChIA-PET <a href="http://refhub.elsevier.com/S0168-9525(15)00063-3/sbref1405">[7]</a></td>
-    <td>Interaction of whole genome mediated by protein</td>
-    <td>Depends on read depth and the size of the genome region bound by the protein of interest</td>
-    <td><ul><li>Lower noise with ChIP</li><li>Biased method since selected protein</li></ul></td>
-    </tr>
- </tbody>
-</table>
+        <td>6. Learning the correction model</td>
+        <td>Take into account of fragments length, inter-fragment distance, GC content and mappability score biases to learn the correction model for Hi-C data. (Yaffe E. and Tanay A., 2011). In addition, biological biases are considered at this step (TSSs and CTCF bound sites).</td>
+    </tr><br>
+    
+
+
+- **Normalizing the data**<br>
+
+- **Visualizing the data**<br>
+
+
+
+
+
+
+
 
 
 
