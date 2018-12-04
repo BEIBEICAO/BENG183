@@ -90,17 +90,16 @@ More options on SRA Toolkit: https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?v
 - **Paired-end sequencing** 
 > Split paired-reads SRA data into SRRXXXXXXX_1.fastq and SRRXXXXXXX_2.fastq, and SRRXXXXXXX.fastq (if present) contains reads with no mates. Paired-end sequencing allows users to sequence both ends of a fragment and generate high-quality, alignable sequence data. Paired-end sequencing facilitates detection of genomic rearrangements and repetitive sequence elements, as well as gene fusions and novel transcripts.
 - **Pre-truncation of the reads**
-> Truncate read ends at the ligation site (if present) and keep the longest piece without the junction sequence to improve the mapping outcome. The rationale is to remove bases that would otherwise prevent a read mapping to the specified reference genome, or mapping but with lower quality.<br> 
-More instructions: https://doc.genomegitar.org/preprocessing_data.html
+> Truncate read ends at the ligation site (if present) and keep the longest piece without the junction sequence to improve the mapping outcome. The rationale is to remove bases that would otherwise prevent a read mapping to the specified reference genome, or mapping but with lower quality. More instructions see link below.
 - **Independent alignment of pairs (Mapping to reference genome)**
 > Bowtie 2 is used for mapping the read pairs, and reads are mapped independently to **avoid any proximity constraint**.<br>
 More about Bowtie 2: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 - **Filtering reads and selecting reads that are paired**
-> Remove unmapped or low quality mapped reads (MAPQ < 30). Create bam files that will serve as inputs for the normalization pipeline.<br>
-More instructions: https://doc.genomegitar.org/preprocessing_data.html
+> Remove unmapped or low quality mapped reads (MAPQ < 30). Create bam files that will serve as inputs for the normalization pipeline. More instructions see link below.
 - **Fragment end file generation for specific species and restriction enzyme**
-> Create the fragment-end (FEND) bed file, which is used to normalize the data （technical & biological biases） and contains restriction site coordinates and additional information related to fragment properties (GC content and mappability score). <br>
-More instructions: https://doc.genomegitar.org/preprocessing_data.html
+> Create the fragment-end (FEND) bed file, which is used to normalize the data （technical & biological biases） and contains restriction site coordinates and additional information related to fragment properties (GC content and mappability score). More instructions see link below.<br>
+
+*More instructions: https://doc.genomegitar.org/preprocessing_data.html
 
 #### 3) Data Analysis and Visualization<a name="33"></a>
  <table>
@@ -158,7 +157,7 @@ This part is to plot the heatmap and histogram for the normalized contact data.<
 > B: Enrichment normalized contact matrix of chromosome 6 from 50 Mb to 54 Mb with a bin size of 40 kb and the respective histogram.
 This part is to plot the heatmap and histogram for the enrichment normalized data (“observed over expected”). The log2 of the data is plotted to quantify the positive enrichment (red) and the negative enrichment (blue). Loci (pixels) equal to zero before performing the log2 (deriving from zero observed contacts) are shown in gray. Loci (pixels) where enrichment expected contact was zero before performing the ratio (observed / expected) are shown in black.
 
-
+#### 4) Topological Domains Analysis<a name="34"></a>
 
 
 
