@@ -7,9 +7,9 @@
 3. [Data Analysis](#3)<br>
     3.1 [GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data](#31)<br>
     3.2 [Analytical Pipline](#32)<br>
-            3.2.1 [Data Pre-processing](#321)<br>
-            3.2.2 [Data Analysis and Visualization](#322)<br>
-            3.2.3 [Topological Domains Analysis](#323)
+        3.2.1 [Data Pre-processing](#321)<br>
+        3.2.2 [Data Analysis and Visualization](#322)<br>
+        3.2.3 [Topological Domains Analysis](#323)
     
 
 
