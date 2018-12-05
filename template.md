@@ -140,16 +140,14 @@ More options on [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?
     </tr>
     <tr>
         <td>8.<br>Visualize the data</td>
-        <td>This part is to plot the heatmap and histogram for the normalized contact data. After learning the correction parameters two matrices are computed per each chromosome at a specific bin size: Observed contact matrix O[i,j] where each entry contains the
-observed read count between the regions identified by the bins i and j; Correction matrix E[i,j] where each entry contains the sum of
-corrections for the read pairs between bins i and j. Then, the normalized contact matrix N[i,j] contains the corrected
-contact counts in each entry and it is calculated as: N[i,j] = O[i,j]/E[i,j]. </td>
+        <td>This part is to plot the heatmap and histogram for the normalized contact data.  </td>
     </tr>
  </tbody>
 </table>
 
-> 1. The script HiCtool_hifive.py can be used to run all the HiFive steps (1-6), whose outputs are .hdf5 files. For more information about these functions, please see HiFive’s API documentation.<br>
-> 2. [More detailed instructions here](https://doc.genomegitar.org/data_analysis_and_visualization.html).
+> 1. The script HiCtool_hifive.py can be used to run all the HiFive steps (1-6), whose outputs are .hdf5 files. For more information about these functions, please see [HiFive’s API documentation](https://hifive-analysis-software.readthedocs.io/en/latest/).<br>
+> 2. About step 8: By bining the genome into small regions (‘’loci’’, usually 1MB) and defining the matrix entry mij to be the number of ligation products between locus i and locus j, it can be visually represented as a heatmap, with intensity indicating contact frequency (for Intra-chromosome contact matrix; Inter-chromosome contact matrix is about different chromosome interaction). After learning the correction parameters two matrices are computed per each chromosome at a specific bin size: Observed contact matrix O[i,j] where each entry contains the observed read count between the regions identified by the bins i and j; Correction matrix E[i,j] where each entry contains the sum of corrections for the read pairs between bins i and j. Then, the normalized contact matrix N[i,j] contains the corrected contact counts in each entry and it is calculated as: N[i,j] = O[i,j]/E[i,j].
+> 3. [More instructions here](https://doc.genomegitar.org/data_analysis_and_visualization.html).
 <br>
 
 **Result Sample Figure**<br>
