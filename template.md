@@ -107,39 +107,48 @@ More options on [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?
  <table>
   <tbody>
     <tr>
+        <th></td>
         <th>Step</td>
         <th>Function</td>
     </tr>
     <tr>
-        <td>1.<br>Create the Fend object</td>
+        <td>1</td>
+        <td>Create the Fend object</td>
         <td>Fend object Transform bed file to FEND object (which containing RE information like coordinates, GC content and mappability score).</td>
     </tr>
      <tr>
-        <td>2.<br>Create the HiCData object</td>
+        <td>2</td>
+        <td>Create the HiCData object</td>
         <td>It is where the information from mapped reads and fragments merged. Unwanted paired-reads (like total distance to their respective restriction sites exceeds threshold, PCR duplicates, incomplete restriction enzyme digestion and fragment) are removed.</td>
     </tr>
     <tr>
-        <td>3.<br>Create the HiC project object</td>
+        <td>3</td>
+        <td>Create the HiC project object</td>
         <td>The HiC project object (hdf5 format) links the HiCData object with information about which fends to include in the analysis</td>
     </tr>
     <tr>
-        <td>4.<br>Create the HiC project object</td>
+        <td>4</td>
+        <td>Create the HiC project object</td>
         <td>Filter out fragments that do not have any interaction before learning correction parameters.</td>
     </tr>
     <tr>
-        <td>5.<br>Estimate the HiC distance function</td>
+        <td>5</td>
+        <td>Estimate the HiC distance function</td>
         <td>Estimation of the distance-dependence relationship from the data prior to normalization.  Due to unevenly distributed restriction sites,  fragments surrounded by shorter ones will show higher nearby interactions than those with longer adjacent fragments</td>
     </tr>
     <tr>
-        <td>6.<br>Learn the correction model</td>
+        <td>6</td>
+        <td>Learn the correction model</td>
         <td>Take into account of fragments length, inter-fragment distance, GC content and mappability score biases to learn the correction model for Hi-C data. (Yaffe E. and Tanay A., 2011). In addition, biological biases are considered at this step (TSSs and CTCF bound sites).</td>
     </tr>
     <tr>
-        <td>7.<br>Normalize the data</td>
+        <td>7</td>
+        <td>Normalize the data</td>
         <td>For the normalization, observed data and correction parameters to remove the biases to obtain the corrected read counts are required. Therefore, the observed contact matrix and the fend expected contact matrix are calculated. In addition, the enrichment expected contact matrix is calculated to compute the observed over expected enrichment values, considering also the distance between fends.</td>
     </tr>
     <tr>
-        <td>8.<br>Visualize the data</td>
+        <td>8</td>
+        <td>Visualize the data</td>
         <td>This part is to plot the heatmap and histogram for the normalized contact data.  </td>
     </tr>
  </tbody>
