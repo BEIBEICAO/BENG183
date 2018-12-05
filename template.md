@@ -32,7 +32,7 @@ In order to study these interactions, the scientists have developed a series of 
 
 Hi-C couples proximity ligation and do massively parallel sequencing, therefore it has the following advangtages:
 - **All v.s. all**
-    - In 3C derived techniques, ‘1’, ‘Many’ and ‘All’ indicate how many loci are interrogated in a given experiment. For example, ‘1 versus All’ indicates that the experiment probes the interaction profile between 1 locus and all other potential loci in the genome. ‘All versus All’ means that one can detect the interaction profiles of all loci, genome-wide, and their interactions with all other genomic loci [1]. By the time when 3C was first developed, we were only able to analysis ‘one versus one’ loci interactions.
+    - In 3C derived techniques, ‘1’, ‘Many’ and ‘All’ indicate how many loci are interrogated in a given experiment. For example, ‘1 versus All’ indicates that the experiment probes the interaction profile between 1 locus and all other potential loci in the genome. ‘All versus All’ means that one can detect the interaction profiles of all loci, genome-wide, and their interactions with all other genomic loci. By the time when 3C was first developed, we were only able to analysis ‘one versus one’ loci interactions.
 - **Doesn’t require any prior knowledge**
 - **High through-put**
     - Hi-C techniques has the highest through-put (billion reads per sample) of 3C-derived technologies. Due to the decreasing cost of 2nd generation sequencing, Hi-c is widely used. 
@@ -42,7 +42,7 @@ Hi-C couples proximity ligation and do massively parallel sequencing, therefore 
 
 
 
-## 2. Hi-C Protocol<a name="2">[8]</a> 
+## 2. Hi-C Protocol<a name="2"></a> 
 
 #### 1) Hi-C Critical Steps<a name="21"></a>
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/protocol.png">
@@ -147,7 +147,7 @@ More options on [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?
 
 > 1. The script HiCtool_hifive.py can be used to run all the HiFive steps (1-6), whose outputs are .hdf5 files. For more information about these functions, please see [HiFive’s API documentation](https://hifive-analysis-software.readthedocs.io/en/latest/).<br>
 > 2. About step 8: By bining the genome into small regions (‘’loci’’, usually 1MB) and defining the matrix entry mij to be the number of ligation products between locus i and locus j, it can be visually represented as a heatmap, with intensity indicating contact frequency (for Intra-chromosome contact matrix; Inter-chromosome contact matrix is about different chromosome interaction). After learning the correction parameters two matrices are computed per each chromosome at a specific bin size: Observed contact matrix O[i,j] where each entry contains the observed read count between the regions identified by the bins i and j; Correction matrix E[i,j] where each entry contains the sum of corrections for the read pairs between bins i and j. Then, the normalized contact matrix N[i,j] contains the corrected contact counts in each entry and it is calculated as: N[i,j] = O[i,j]/E[i,j].
-> 3. [More instructions here](https://doc.genomegitar.org/data_analysis_and_visualization.html).
+> 3. *[More instructions here](https://doc.genomegitar.org/data_analysis_and_visualization.html).
 <br>
 
 **Result Sample Figure**<br>
@@ -158,6 +158,36 @@ This part is to plot the heatmap and histogram for the normalized contact data.<
 This part is to plot the heatmap and histogram for the enrichment normalized data (“observed over expected”). The log2 of the data is plotted to quantify the positive enrichment (red) and the negative enrichment (blue). Loci (pixels) equal to zero before performing the log2 (deriving from zero observed contacts) are shown in gray. Loci (pixels) where enrichment expected contact was zero before performing the ratio (observed / expected) are shown in black.
 
 ##### 3) Topological Domains Analysis<a name="323"></a>
+
+Topologically associating domains (TADs): 
+- Highly self-interacting regions at the level of hundreds of kilobases (~10^5 bases) to few megabases (~10^6 bases).
+- Separated by boundaries that prevent interactions with the neighboring regions.
+- General property of genomes (human, mouse, drosophila).
+- They appear as triangles along the diagonal of the heatmap (A).<br>
+<img src ="https://github.com/BEIBEICAO/BENG183/raw/master/TAD.png" width="70%" height="70%">
+
+- [Directionality Index (DI)](https://doc.genomegitar.org/DI_calculation.html?highlight=tad) per each 40 kb bin is proportional to the difference between downstream and upstream biases of contact counts up to 2 Mb (50 bins).
+- A [Hidden Markov Model (HMM)](https://en.wikipedia.org/wiki/Hidden_Markov_model) is used to determine the underlying biased state for each locus (upstream, downstream or none).
+- Shifts of the “true” DI (from negative to positive) allows to identify topological domain boundaries and therefore topological domain coordinates (B: start – end):<br>
+    50080000
+    50600000
+
+    50640000
+    51760000
+
+    51840000
+    52000000
+
+    52080000
+    52680000
+
+    52800000
+    53040000
+
+    53120000
+    53760000<br>
+<img src ="https://github.com/BEIBEICAO/BENG183/raw/master/DI.png" width="70%" height="70%">
+
 
 
 
