@@ -7,9 +7,7 @@
 3. [Data Analysis](#3)<br>
     3.1 [GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data](#31)<br>
     3.2 [Analytical Pipline](#32)<br>
-        3.2.1 [Data Pre-processing](#321)<br>
-        3.2.2 [Data Analysis and Visualization](#322)<br>
-        3.2.3 [Topological Domains Analysis](#323)
+       
     
 
 
@@ -226,19 +224,21 @@ Topologically associating domains (TADs):
 
 
 # Referrence
-[1] Hoffman EA, et al. (2015) Break-seq reveals hydroxyurea-induced chromosome fragility as a result of unscheduled conflict between DNA replication and transcription. Genome Res 25(3): 402-12 <br>
+[1] Calandrelli, Riccardo, et al. “GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data.” Apr. 2018, doi:10.1101/259515.<br>
 
-[2] van Berkum, N. L., Lieberman-Aiden, E., Williams, L., Imakaev, M., Gnirke, A., Mirny, L. A., Dekker, J., Lander, E. S. Hi-C: A Method to Study the Three-dimensional Architecture of Genomes.. J. Vis. Exp. (39), e1869, doi:10.3791/1869 (2010).<br>
+[2] Van Berkum, N. L., Lieberman-Aiden, E., Williams, L., Imakaev, M., Gnirke, A., Mirny, L. A., Dekker, J., Lander, E. S. Hi-C: A Method to Study the Three-dimensional Architecture of Genomes.. J. Vis. Exp. (39), e1869, doi:10.3791/1869 (2010).<br>
 
 [3] https://github.com/hms-dbmi/hic-data-analysis-bootcamp/blob/master/HiC-Protocol.pptx<br>
 
 [4] https://zhonglab.gitbook.io/3dgenome/chapter2-computational-analysis/3.2-higer-order-data-analysis/analytical-pipelines<br>
 
-[5] Calandrelli, Riccardo, et al. “GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data.” Apr. 2018, doi:10.1101/259515.<br>
+[5] Hoffman EA, et al. (2015) Break-seq reveals hydroxyurea-induced chromosome fragility as a result of unscheduled conflict between DNA replication and transcription. Genome Res 25(3): 402-12<br>
 
 [6] https://doc.genomegitar.org/data_analysis_and_visualization.html<br>
 
 [7] https://doc.genomegitar.org/data_analysis_and_visualization.html<br>
+
+[8] https://drive.google.com/file/d/1nxP13mOIer_6yiLi7OFXHbQ4-D3Eqq4k/view
 
 
 
