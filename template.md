@@ -169,7 +169,6 @@ This part is to plot the heatmap and histogram for the enrichment normalized dat
 Topologically associating domains (TADs): 
 - Highly self-interacting regions at the level of hundreds of kilobases (~10^5 bases) to few megabases (~10^6 bases).
 - Separated by boundaries that prevent interactions with the neighboring regions.
-- General property of genomes (human, mouse, drosophila).
 - They appear as triangles along the diagonal of the heatmap (A).<br>
 <img src ="https://github.com/BEIBEICAO/BENG183/raw/master/TAD.png" width="70%" height="70%">
 
