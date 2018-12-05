@@ -69,7 +69,7 @@ Each ligation product is marked with biotin at the site of the junction.
 
 ## 3. Data Analysis<a name="3"></a> 
 
-#### 1) GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data<a name="31"></a>
+### 1) GITAR: an Open Source Tool for Analysis and Visualization of Hi-C Data<a name="31"></a>
 
 GITAR (Genome Interaction Tools and Resources), is a software to perform a comprehensive Hi-C data analysis, including data preprocessing, normalization, visualization and topologically associated domains (TADs) analysis. GITAR is composed of two main modules: 
 - **HiCtool**, a Python library to process and visualize Hi-C data, including TADs analysis and 
@@ -77,12 +77,12 @@ GITAR (Genome Interaction Tools and Resources), is a software to perform a compr
 
 GITAR enables to work with Hi-C data even without any programming or bioinformatic expertise and it is available online at www.genomegitar.org as an open source software.
 
-#### 2) Analytical Pipline<a name="32"></a>
+### 2) Analytical Pipline<a name="32"></a>
 
 **HiCtool wrokflow:**<br>
 <img src="https://github.com/BEIBEICAO/BENG183/raw/master/HiCtool.png"><br>
 
-##### 1) Data Pre-processing<a name="321"></a>
+#### Part I: Data Pre-processing<a name="321"></a>
 
 - **Downloading the source data from GEO**
 > Source data (sra format) can be downloaded via GEO accession number using the command **fastq-dump**.<br>
@@ -100,7 +100,7 @@ More options on [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?
 
 *[More instructions here](https://doc.genomegitar.org/preprocessing_data.html)
 
-##### 2) Data Analysis and Visualization<a name="322"></a>
+#### Part II: Data Analysis and Visualization<a name="322"></a>
 
  <table>
   <tbody>
@@ -164,7 +164,7 @@ This part is to plot the heatmap and histogram for the normalized contact data.<
 > B: Enrichment normalized contact matrix of chromosome 6 from 50 Mb to 54 Mb with a bin size of 40 kb and the respective histogram.
 This part is to plot the heatmap and histogram for the enrichment normalized data (“observed over expected”). The log2 of the data is plotted to quantify the positive enrichment (red) and the negative enrichment (blue). Loci (pixels) equal to zero before performing the log2 (deriving from zero observed contacts) are shown in gray. Loci (pixels) where enrichment expected contact was zero before performing the ratio (observed / expected) are shown in black.
 
-##### 3) Topological Domains Analysis<a name="323"></a>
+#### Part III: Topological Domains Analysis<a name="323"></a>
 
 Topologically associating domains (TADs): 
 - Highly self-interacting regions at the level of hundreds of kilobases (~10^5 bases) to few megabases (~10^6 bases).
