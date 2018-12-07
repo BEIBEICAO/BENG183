@@ -194,6 +194,16 @@ Topologically associating domains (TADs):
     53760000<br>
 <img src ="https://github.com/BEIBEICAO/BENG183/raw/master/DI.png" width="70%" height="70%">
 
+#
+**GITAR is a comprehensive framework and it consists of a standardized pipeline to analyze and visualize Hi-C data and a large collection of processed datasets.**
+
+No installation needed, except for the Python libraries and software required:
+
+- [Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml)
+- [SAMTools](http://www.htslib.org/doc/samtools-1.2.html)
+- [BEDTools](https://bedtools.readthedocs.io/en/latest/)
+- [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=fastq-dump)
+
 
 
 
